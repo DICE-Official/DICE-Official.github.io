@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://dice-official.github.io</id>
+    <title>DICE的GitHub页面</title>
+    <updated>2023-12-29T02:57:43.518Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://dice-official.github.io"/>
+    <link rel="self" href="https://dice-official.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://dice-official.github.io/images/avatar.png</logo>
+    <icon>https://dice-official.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, DICE的GitHub页面</rights>
+    <entry>
+        <title type="html"><![CDATA[hello world]]></title>
+        <id>https://dice-official.github.io/post/hello-world/</id>
+        <link href="https://dice-official.github.io/post/hello-world/">
+        </link>
+        <updated>2023-12-10T11:17:01.000Z</updated>
+        <content type="html"><![CDATA[<p>hello world🎉</p>
+]]></content>
+    </entry>
+</feed>
