@@ -7,9 +7,10 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #fff; /* 初始为白色 */
             text-align: center;
             margin: 50px;
+            transition: background-color 2s ease; /* 添加过渡效果 */
         }
 
         #message {
@@ -28,7 +29,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease; /* 添加过渡效果 */
         }
 
         #button {
@@ -40,6 +41,21 @@
             background-color: #ff3333;
         }
 
+        #progressBar {
+            width: 0;
+            height: 20px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: width 5s linear; /* 添加过渡效果 */
+        }
+
+        #countdownText {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #4CAF50;
+        }
+
         ul {
             list-style-type: none;
             padding: 0;
@@ -47,6 +63,18 @@
 
         li {
             margin: 10px 0;
+        }
+
+        /* 添加动画效果 */
+        @keyframes appear {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        #appearedText {
+            font-weight: bold;
+            color: #ff3333;
+            animation: appear 2s forwards;
         }
     </style>
 </head>
@@ -69,16 +97,34 @@
     </div>
     <button id="button" onclick="downloadData()">点击此按钮将互联网的全部数据下载至您的终端</button>
     <button id="deleteButton" onclick="deleteInternetMemory()">删除所有互联网记忆</button>
+    <div id="progressBar"></div>
+    <div id="countdownText"></div>
 
     <script>
         function downloadData() {
-            // 在这里添加将互联网数据下载到终端的实际操作
-            alert("互联网数据下载中...");
+            // 隐藏按钮
+            document.getElementById('button').style.display = 'none';
+            document.getElementById('deleteButton').style.display = 'none';
+
+            // 显示进度条和倒计时文字
+            document.getElementById('progressBar').style.width = '100%';
+            document.getElementById('countdownText').innerText = '正在下载您的全部记忆';
+
+            // 模拟操作完成后，更改文字
+            setTimeout(() => {
+                document.getElementById('countdownText').innerText = '已下载完成';
+            }, 5000); // 模拟5分钟下载时间
         }
 
         function deleteInternetMemory() {
-            // 在这里添加删除所有互联网记忆的实际操作
-            alert("所有互联网记忆已被删除");
+            // 页面变为白屏
+            document.body.style.backgroundColor = '#fff';
+            // 隐藏按钮
+            document.getElementById('button').style.display = 'none';
+            document.getElementById('deleteButton').style.display = 'none';
+
+            // 显示文字
+            document.getElementById('message').innerHTML += '<p id="appearedText">互联网上已再无您的痕迹</p>';
         }
     </script>
 </body>
