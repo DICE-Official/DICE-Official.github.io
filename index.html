@@ -1,151 +1,85 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互联网尽头</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 50px;
+        }
 
-<title>DICE的GitHub页面</title>
+        #message {
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+            text-align: left;
+        }
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        #button, #deleteButton {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://dice-official.github.io/favicon.ico?v=1703818661090">
-<link rel="stylesheet" href="https://dice-official.github.io/styles/main.css">
+        #button {
+            background-color: #4CAF50;
+            margin-right: 10px;
+        }
 
+        #deleteButton {
+            background-color: #ff3333;
+        }
 
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-
-
-    <meta name="description" content="温故而知新">
-    
-  </head>
-  <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://dice-official.github.io">
-        <img src="https://dice-official.github.io/images/avatar.png?v=1703818661090" class="site-logo">
-        <h1 class="site-title">DICE的GitHub页面</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
+        li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="message">
+        <h1>恭喜你！</h1>
+        <p>您已经到达互联网的尽头</p>
+        <p>没有更多的信息供您了解了，也没有更多的链接供您访问了</p>
+        <p>您做完了在互联网上的一切</p>
+        <p>这是互联网最远端的最后一台服务器上的最后一页</p>
+        <p>现在你应该关闭所有的电子设备，在余生中去做一些有用的事情</p>
+        <p>例如：</p>
+        <ul>
+            <li>读一本书</li>
+            <li>多陪伴一会家人</li>
+            <li>去认识一些现实生活中的朋友</li>
+            <li>种一棵树</li>
+        </ul>
+        <p>出门时请不要忘记关灯</p>
     </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-          <a class="social-link" href="https://github.com/DICE-Official/DICE-Official.github.io" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://twitter.com/DICE_CN" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      温故而知新
-    </div>
-    <div class="site-footer">
-      GitHub🎉 | <a class="rss" href="https://dice-official.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
-</div>
+    <button id="button" onclick="downloadData()">点击此按钮将互联网的全部数据下载至您的终端</button>
+    <button id="deleteButton" onclick="deleteInternetMemory()">删除所有互联网记忆</button>
 
+    <script>
+        function downloadData() {
+            // 在这里添加将互联网数据下载到终端的实际操作
+            alert("互联网数据下载中...");
+        }
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://dice-official.github.io/post/hello-world/">
-                  <h2 class="post-title">hello world</h2>
-                </a>
-                <div class="post-date">
-                  2023-12-10
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-                <a class="right" href="https://dice-official.github.io/post/hello-world/">
-                  <div class="feature-container" style="background-image: url('https://dice-official.github.io/post-images/hello-world.png')">
-                  </div>
-                </a>
-              
-            </article>
-          
-
-          <div class="pagination-container">
-  
-  
-</div>
-
-        </div>
-      </div>
-    </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
-
-AOS.init();
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
-</script>
-
-
-
-
-
-
-  </body>
+        function deleteInternetMemory() {
+            // 在这里添加删除所有互联网记忆的实际操作
+            alert("所有互联网记忆已被删除");
+        }
+    </script>
+</body>
 </html>
